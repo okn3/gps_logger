@@ -16,3 +16,4 @@ if __name__ == "__main__":
             print "raw_data: "+line
             lat,lng = convert(data[2],data[4])
             print lat , "," , lng , "\n"
+            # http通信実装
