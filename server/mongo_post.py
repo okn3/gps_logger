@@ -9,7 +9,7 @@ from datetime import datetime
 connect = MongoClient('localhost', 27017)
 
 #testdbを取得
-db = connect.pi_data
+db = connect.sensors
 #次のような記述もOK db = con['test']
 
 #db名を出力
@@ -17,11 +17,11 @@ print "db name is = "
 print db.name
 
 #collectionの指定
-collect = db.gps_log
+collect = db.gps
 #次のような記述もOK col = db['foo']
 
 #データ登録
-collect.save({"date":datetime.utcnow(),"location":{"lat":133,"lng":35}})
+collect.save({"date":datetime.now(),"location":{"lat":133,"lng":35}})
 
 #最初に格納されているドキュメントを検索
 print "find_one = "
@@ -33,6 +33,6 @@ for data in collect.find():
         print data
 
 #条件を指定してドキュメントを検索
-print "find_query = "
-for data in collect.find({'lat':130}):
-        print data
+#print "find_query = "
+#for data in collect.find({'lat':130}):
+#        print data
