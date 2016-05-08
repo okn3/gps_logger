@@ -26,6 +26,13 @@ def get_gps():
     print "logs",logs
     return logs
 
+# 最新の一件を取得
+def get_recent_gps():
+    recent_log = list(collect.find().sort('_id',-1).limit(1))
+    print "recent_log: ",recent_log
+    return recent_log
+
 if __name__ == "__main__":
 #   set_gps(123,456)
-    get_gps()
+#    get_gps()
+    get_recent_gps()
