@@ -1,3 +1,4 @@
+#coding:utf-8
 import serial
 from datetime import datetime
 

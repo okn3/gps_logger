@@ -2,6 +2,7 @@
 import sys
 sys.path.append('module')
 from flask import Flask
+from flask import request
 import usemongo
 
 app = Flask(__name__)
@@ -9,14 +10,14 @@ app = Flask(__name__)
 def root():
     return "running!"
 
-#@app.route('/@@@')
-#def @@@():
-#    return @@@
-
-@app.route('/set_gps')
+@app.route('/api/set/gps',methods=['POST'])
 def set_gps():
-    return usemongo.set_gps(111,222)
+    usemongo.set_gps(request.form['lat'], request.form['lng'])
+    return "set_gps"
 
-
+@app.route('/api/get/gps')
+def get_gps():
+    res = usemongo.get_gps()
+    return str(res)
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0',debug=False)

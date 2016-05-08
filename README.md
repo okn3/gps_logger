@@ -1,3 +1,10 @@
+## API Reference
+
+* api/get/gps
+
+* api/set/gps
+
+
 ## 準備
 
 ### 素材
