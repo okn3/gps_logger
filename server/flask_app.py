@@ -36,11 +36,9 @@ def show_spot():
 # 複数データを読み取り表示経路の表示
 @app.route('/web/show_route')
 def show_route():
-    lat,lng = usemongo.get_gps_now()
-    print "lat:",lat
-    print "lng:",lng
-    return render_template('route.html',lat=lat,lng=lng)
-
+    gps_list = usemongo.get_gps_all()
+    print gps_list
+    return render_template('route.html', path = gps_list)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=False)
