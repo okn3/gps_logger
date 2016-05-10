@@ -27,11 +27,19 @@ def get_log_recent():
     return str(res)
 
 @app.route('/web/show_spot')
-def show_spot(name = None):
+def show_spot():
     lat,lng = usemongo.get_gps_now()
     print "lat:",lat
     print "lng:",lng
-    return render_template('map.html',lat=lat,lng=lng)
+    return render_template('spot.html',lat=lat,lng=lng)
+
+# 複数データを読み取り表示経路の表示
+@app.route('/web/show_route')
+def show_route():
+    lat,lng = usemongo.get_gps_now()
+    print "lat:",lat
+    print "lng:",lng
+    return render_template('route.html',lat=lat,lng=lng)
 
 
 if __name__ == '__main__':

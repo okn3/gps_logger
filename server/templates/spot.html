@@ -22,14 +22,15 @@
       var map = new GMaps({
         el: '#map',
         lat: {{lat}},
-        lng: {{lng}}
-      });
-      // ピンの追加
-      map.addMarker({
-        lat: {{lat}},
         lng: {{lng}},
-        title:"I'm at here."
-      })
-    </script> 
+        zoom:8,
+      });
+     // ピンの追加
+     map.addMarker({
+       lat: {{lat}},
+       lng: {{lng}},
+       title:"I'm at here."
+     })
+         </script> 
   </body>
 </html>
