@@ -1,12 +1,35 @@
 <!doctype html>
   <head>
     <title>ログ表示システム</title>
+    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="{{ url_for('static', filename='gmaps.js') }}"></script>
+    <style type="text/css">
+      #map {
+        width: 400px;
+        height: 400px;
+      }
+    </style>
     <script>
       setTimeout("location.reload()",1000*60);
     </script>
   </head>
   <body>
-    <h1>現在地</h1>
+    <h1>I'm at here</h1>
       {% print "緯度:",lat," 経度:",lng %}
+   <div id="map"></div>
+   <script>
+     // 基本マップの表示
+      var map = new GMaps({
+        el: '#map',
+        lat: {{lat}},
+        lng: {{lng}}
+      });
+      // ピンの追加
+      map.addMarker({
+        lat: {{lat}},
+        lng: {{lng}},
+        title:"I'm at here."
+      })
+    </script> 
   </body>
 </html>

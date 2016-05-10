@@ -13,7 +13,7 @@ def root():
 
 @app.route('/api/gps/set',methods=['POST'])
 def set_gps():
-    usemongo.set_gps(int(request.form['lat']), int(request.form['lng']))
+    usemongo.set_gps(float(request.form['lat']), float(request.form['lng']))
     return "set_gps"
 
 @app.route('/api/gps/show_all')
