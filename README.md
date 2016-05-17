@@ -1,9 +1,16 @@
 ## API Reference
 
 * api/get/gps
+GPSデータの取得
 
 * api/set/gps
+GPSデータの登録
 
+* web/show_recent
+最近のスポット表示
+
+* web/show_route
+今までのルート表示
 
 ## 準備
 
@@ -49,11 +56,11 @@
 - [ ] バイクの電力で動作するか？
 
 実装
-- [ ] AWS設定(gunicorn-)
+- [x] AWS設定(mod_wsgi-)
 - [x] 受け取りプログラム
 - [x] piから送信するプログラム(Requestsで実装)
 - [x] DB受け取り確認
-- [ ] ウェブでデータ確認
+- [x] ウェブでデータ確認
 
 - [ ] android通知用プログラム（サーバ）
 - [ ] androidで表示（ネイティブ）
