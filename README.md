@@ -1,13 +1,16 @@
 ## API Reference
 
-### api/get/gps
-GPSデータの取得
-
 ### api/set/gps
 GPSデータの登録
 
-### web/show_recent
-最近のスポット表示
+### api/gps/show_all
+DB内のすべてのデータを表示（コンソール）
+
+### api/gps/show_recent
+DB内の最新一件表示（コンソール）
+
+### web/show_spot
+最近のスポット表示(ピン)
 
 ### web/show_route
 今までのルート表示
