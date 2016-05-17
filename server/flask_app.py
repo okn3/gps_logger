@@ -1,6 +1,6 @@
 # coding:utf-8
 import sys
-sys.path.append('module')
+sys.path.append('/var/www/gps_logger/server/module')
 from flask import Flask
 from flask import request
 from flask import render_template
