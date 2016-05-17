@@ -1,15 +1,15 @@
 ## API Reference
 
-* api/get/gps
+### api/get/gps
 GPSデータの取得
 
-* api/set/gps
+### api/set/gps
 GPSデータの登録
 
-* web/show_recent
+### web/show_recent
 最近のスポット表示
 
-* web/show_route
+### web/show_route
 今までのルート表示
 
 ## 準備
