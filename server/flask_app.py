@@ -40,5 +40,9 @@ def show_route():
     print gps_list
     return render_template('route.html', path = gps_list)
 
+@app.route('/web/test_geo_api')
+def test_geo_api():
+    return render_template('geo.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=False)
