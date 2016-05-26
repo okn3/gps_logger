@@ -1,6 +1,6 @@
 # coding:utf-8
-import sys
-sys.path.append('/var/www/gps_logger/server/module')
+import sys, os
+sys.path.append(os.getcwd()+'/module/')
 from flask import Flask
 from flask import request
 from flask import render_template
@@ -29,15 +29,15 @@ def get_log_recent():
 @app.route('/web/show_spot')
 def show_spot():
     lat,lng = usemongo.get_gps_now()
-    print "lat:",lat
-    print "lng:",lng
+    print("lat:",lat)
+    print("lng:",lng)
     return render_template('spot.html',lat=lat,lng=lng)
 
 # 複数データを読み取り表示経路の表示
 @app.route('/web/show_route')
 def show_route():
     gps_list = usemongo.get_gps_all()
-    print gps_list
+    print(gps_list)
     return render_template('route.html', path = gps_list)
 
 @app.route('/web/test_geo_api')

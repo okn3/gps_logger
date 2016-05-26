@@ -11,7 +11,7 @@ connect = MongoClient('localhost', 27017)
 db = connect.sensors
 collect = db.gps
 
-print "Called usemongo.py"
+print("Called usemongo.py")
 
 #データ登録
 def set_gps(lat,lng):
@@ -23,13 +23,13 @@ def get_gps():
     logs = []
     for data in collect.find():
         logs.append(data)
-    print "logs",logs
+    print("logs",logs)
     return logs
 
 # 最新の一件を取得
 def get_log_recent():
     recent_log = list(collect.find().sort('_id',-1).limit(1))
-    print "recent_log: ",recent_log
+    print("recent_log: ",recent_log)
     return recent_log
 
 # 最新の一件のlat,lngを返す
@@ -57,4 +57,4 @@ if __name__ == "__main__":
 #    get_gps()
 #    print get_recent_gps()
 #    print get_gps_now()
-    print get_gps_all()
+    print(get_gps_all())
